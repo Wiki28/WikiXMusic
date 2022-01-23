@@ -162,7 +162,7 @@ async def music_onoff(_, message):
         return
     if len(message.command) != 2:
         await message.reply_text(
-            "**• usage:**\n\n `/music on` & `/music off`"
+            "**• usage:**\n\n `/musicp on` & `/musicp off`"
         )
         return
     status = message.text.split(None, 1)[1]
@@ -419,7 +419,7 @@ async def m_cb(b, cb):
             )
 
 
-@Client.on_message(command(["play", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["play", "pl", f"play@{BOT_USERNAME}"]) & other_filters)
 async def play(_, message: Message):
     
     bttn = InlineKeyboardMarkup(
